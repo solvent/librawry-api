@@ -1,16 +1,16 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using librawry.portable;
+using Microsoft.EntityFrameworkCore;
 
-namespace librawry_api {
-	public class Program {
-		public static void Main(string[] args) {
-			CreateHostBuilder(args).Build().Run();
-		}
+var builder = WebApplication.CreateBuilder(args);
+var cons = builder.Configuration.GetConnectionString("SqliteDatabase");
 
-		public static IHostBuilder CreateHostBuilder(string[] args) =>
-			Host.CreateDefaultBuilder(args)
-				.ConfigureWebHostDefaults(webBuilder => {
-					webBuilder.UseStartup<Startup>();
-				});
-	}
-}
+builder.Services.AddControllers();
+builder.Services.AddDbContext<LibrawryContext>(options => options.UseSqlite(cons));
+
+var app = builder.Build();
+
+app.UseDeveloperExceptionPage();
+app.UseHttpsRedirection();
+app.MapControllers();
+
+app.Run();

@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using librawry.portable;
@@ -8,7 +5,7 @@ using librawry.portable;
 namespace librawry_api.Controllers {
 
 	[ApiController]
-	[Route("[controller]")]
+	[Route("api/[controller]")]
 	public class DetailsController : ControllerBase {
 		private readonly LibrawryContext _context;
 

@@ -2,14 +2,15 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-		<RootNamespace>librawry_api</RootNamespace>
+		<RootNamespace>librawry.api</RootNamespace>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 		<IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.*" />
-		<PackageReference Include="Solvent.Librawry.Portable" Version="6.2.*" />
+		<PackageReference Include="Solvent.Librawry.Portable" Version="6.3.*" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.*" />
 	</ItemGroup>
 
